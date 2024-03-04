@@ -1,0 +1,150 @@
+<div class="container">
+  <div class="nurses">
+    <h2 class="heading">All Nurses</h2>
+    <div class="all-nurses">
+      <div class="nurses-list">
+        <mat-card
+          class="nurse-card"
+          *ngFor="let nurse of nurseList; let i = index"
+        >
+          <div class="short-detail-section">
+            <div class="doc-Image">
+              <img
+                src="https://hips.hearstapps.com/hmg-prod/images/portrait-of-a-happy-young-doctor-in-his-clinic-royalty-free-image-1661432441.jpg?crop=0.66698xw:1xh;center,top&resize=1200:*"
+                alt=""
+              />
+            </div>
+
+            <div>
+              <h3 class="doc-name" (click)="selectNurse(i)">
+                {{ nurse.name }}&nbsp;{{ nurse.sur_name }}
+              </h3>
+              <p>
+                Experience:
+                {{
+                  nurse.total_experience === null ? 0 : nurse.total_experience
+                }}
+                Years
+              </p>
+              <p>
+                ZSR Number:
+                {{ nurse.zsr_number === null ? 0 : nurse.zsr_number }}
+              </p>
+              <p>{{ nurse.address }}</p>
+            </div>
+          </div>
+          <div class="specialities">
+            <p
+              class="specialities-title"
+              *ngFor="let allService of nurse.services; let i = index"
+            >
+              {{ allService.service.name_en }}
+            </p>
+          </div>
+
+          <div class="buttons">
+            <button
+              mat-raised-button
+              color="primary"
+              routerLink="/nurse-details"
+            >
+              View Profile
+            </button>
+            <button
+              mat-raised-button
+              color="accent"
+              style="color: white"
+              (click)="openScheduleVisitDialog()"
+            >
+              Schedule Visit
+            </button>
+          </div>
+        </mat-card>
+      </div>
+    </div>
+  </div>
+
+  <div class="display-price">
+    <div class="price">
+      <h4>T. Amount</h4>
+      <h3>USD {{ amount }}</h3>
+    </div>
+    <div class="nurse-count">
+      <h4>Selected Nurses</h4>
+      <h3>{{ selectedNurseList.length }}</h3>
+    </div>
+    <div class="select-btn">
+      <button mat-raised-button color="accent" (click)="selectAll()">
+        Select All
+      </button>
+      <button mat-raised-button color="primary" (click)="unSelectAll()">
+        Unselect All
+      </button>
+    </div>
+  </div>
+
+  <div class="nurses">
+    <h2 class="heading">Your selected nurses</h2>
+    <div class="all-nurses">
+      <div class="nurses-list">
+        <mat-card
+          class="nurse-card"
+          *ngFor="let nurse of selectedNurseList; let i = index"
+        >
+          <div class="short-detail-section">
+            <div class="doc-Image">
+              <img
+                src="https://hips.hearstapps.com/hmg-prod/images/portrait-of-a-happy-young-doctor-in-his-clinic-royalty-free-image-1661432441.jpg?crop=0.66698xw:1xh;center,top&resize=1200:*"
+                alt=""
+              />
+            </div>
+
+            <div>
+              <h3 class="doc-name" (click)="unSelectNurse(i)">
+                {{ nurse.name }}&nbsp;{{ nurse.sur_name }}
+              </h3>
+              <p>
+                Experience:
+                {{
+                  nurse.total_experience === null ? 0 : nurse.total_experience
+                }}
+                Years
+              </p>
+              <p>
+                ZSR Number:
+                {{ nurse.zsr_number === null ? 0 : nurse.zsr_number }}
+              </p>
+              <p>{{ nurse.address }}</p>
+            </div>
+          </div>
+          <div class="specialities">
+            <p
+              class="specialities-title"
+              *ngFor="let allService of nurse.services; let i = index"
+            >
+              {{ allService.service.name_en }}
+            </p>
+          </div>
+
+          <div class="buttons">
+            <button
+              mat-raised-button
+              color="primary"
+              routerLink="/nurse-details"
+            >
+              View Profile
+            </button>
+            <button
+              mat-raised-button
+              color="accent"
+              style="color: white"
+              (click)="openScheduleVisitDialog()"
+            >
+              Schedule Visit
+            </button>
+          </div>
+        </mat-card>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,93 @@
+<div class="con">
+  <ul>
+    <li *ngFor="let item of data; let i = index">
+      <div class="box" *ngIf="i === 0">
+        <div class="wrapper">
+          <div class="left">
+            <div class="first">
+              <img
+                style="width: 200px; height: 200px"
+                class="profile-img"
+                src="https://hips.hearstapps.com/hmg-prod/images/portrait-of-a-happy-young-doctor-in-his-clinic-royalty-free-image-1661432441.jpg?crop=0.66698xw:1xh;center,top&resize=1200:*"
+                alt=""
+              />
+              <div class="text">
+                <h3>Name: {{ item.name }}</h3>
+                <p>Gender: {{ item.gender }}</p>
+                <p>KNumber:</p>
+                <p>SRNumber:</p>
+                <p>SBKNumber:</p>
+              </div>
+            </div>
+
+            <div class="second">
+              <h3>Services:</h3>
+              <div class="text">
+                <a href="#">Acute Hospital</a>
+                <a href="#">Pricate Care</a>
+                <br />
+                <a href="#">Retirement and nursing Homes</a>
+              </div>
+            </div>
+
+            <div class="third">
+              <h3>Hourly Rate:</h3>
+              <div class="text">
+                <p>Acute Hostpital: CHF 45</p>
+                <p>Personal Care: CHF 45</p>
+                <p>Private clinic: CHF 45</p>
+              </div>
+            </div>
+
+            <button routerLink="">Request</button>
+          </div>
+          <div class="right">
+            <div class="schedule">
+              <h1>Schedules</h1>
+              <div class="dates">
+                <div class="wrappers">
+                  <div class="left">
+                    <p>Friday, March 20, 2020 - Tuesday,<br />March</p>
+                    <p>
+                      {{ item.schedules[0].start_time }} -
+                      {{ item.schedules[0].end_time }}
+                    </p>
+                  </div>
+                  <div class="right">
+                    <p>Status: {{ item.schedules[0].status }}</p>
+                  </div>
+                </div>
+                <hr />
+                <div class="wrappers">
+                  <div class="left">
+                    <p>Friday, March 20, 2020 - Tuesday,<br />March</p>
+                    <p>
+                      {{ item.schedules[0].start_time }} -
+                      {{ item.schedules[0].end_time }}
+                    </p>
+                  </div>
+                  <div class="right">
+                    <p>Status: {{ item.schedules[0].status }}</p>
+                  </div>
+                </div>
+                <hr />
+                <div class="wrappers">
+                  <div class="left">
+                    <p>Friday, March 20, 2020 - Tuesday,<br />March</p>
+                    <p>
+                      {{ item.schedules[0].start_time }} -
+                      {{ item.schedules[0].end_time }}
+                    </p>
+                  </div>
+                  <div class="right">
+                    <p>Status: {{ item.schedules[0].status }}</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </li>
+  </ul>
+</div>

@@ -1,0 +1,52 @@
+.container {
+  padding: 20px;
+}
+
+.heading {
+  color: deepskyblue;
+  font-size: 32px;
+}
+
+.schedules {
+  margin: 3rem 25px;
+}
+
+.schedules-day {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+}
+
+.day {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  h2 {
+    font-weight: 500;
+    font-size: 24px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #313131;
+  }
+
+  p {
+    font-size: 18px;
+  }
+
+}
+
+.Status {
+
+  h2 {
+    font-weight: 500;
+    font-size: 24px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #313131;
+  }
+
+}
+
+h2,
+p {
+  margin: 0;
+}

@@ -1,0 +1,19 @@
+<div class="container">
+  <div class="heading">Schedules</div>
+
+  <div class="schedules">
+    <div
+      class="schedules-day"
+      *ngFor="let sch of nurseSchedules; let i = index"
+    >
+      <div class="day">
+        <h2>Friday,March 20, 2022 - Tuesday, March 31, 2022</h2>
+        <p>17:00 -20:00</p>
+      </div>
+      <div class="Status">
+        <h2>Status: {{ sch.status }}</h2>
+      </div>
+      <hr />
+    </div>
+  </div>
+</div>
